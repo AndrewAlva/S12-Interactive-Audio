@@ -1,0 +1,163 @@
+:root {
+  --fondo-1: #2e1a14;
+  --fondo-2: #06080d;
+  --texto: #f4efe6;
+  --acento: #ff6a3d;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  color: var(--texto);
+  font-family: var(--sans);
+  background: radial-gradient(circle at 50% 50%, var(--fondo-1), var(--fondo-2) 70%);
+}
+
+/* Texto en HTML ---------------------------------------------------------- */
+#copy {
+  position: fixed;
+  left: 7vw;
+  top: 10vh;
+  max-width: 30ch;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.04em;
+}
+
+.bajada {
+  margin: 1.4rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: .75;
+}
+
+
+/* Data containers en HTML: franja abajo a la derecha ---------------------------------------------------------- */
+#data-extracts {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  pointer-events: none;
+}
+
+.valores ul {
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.valores .label {
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 .4rem;
+}
+
+.valores .data {
+  font-size: 26px;
+  margin: 0;
+}
+
+
+/* Mesa de cartas ---------------------------------------------------------- */
+#mesa {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding-top: 26vh;
+  perspective: 900px;
+  transition: opacity .4s;
+}
+
+/* antes de "Entrar" las cartas no responden: todavía no hay audio */
+body:not(.dentro) #mesa { opacity: .3; pointer-events: none; }
+
+.carta {
+  position: relative;
+  width: min(13vw, 24vh);
+  aspect-ratio: 7 / 12;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.3, 1.4, .5, 1), translate .2s;
+}
+
+.carta:hover { translate: 0 -12px; }
+.carta.volteada { transform: rotateY(180deg); }
+
+.frente, .reverso {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  border: 1px solid var(--texto);
+  backface-visibility: hidden;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.frente {
+  font: 800 clamp(1.5rem, 4vw, 3.5rem)/1 var(--sans);
+  background: var(--fondo-2);
+  color: var(--texto);
+}
+
+.reverso {
+  font: 600 clamp(.8rem, 1.2vw, 1.1rem)/1.2 var(--sans);
+  background: var(--acento);
+  color: var(--fondo-2);
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
+
+
+/* Botones ---------------------------------------------------------- */
+#entrar {
+  font: 500 18px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--texto);
+  background: none;
+  border: 1px solid var(--texto);
+  border-radius: 999px;
+  padding: 1.3rem 2.4rem;
+  cursor: pointer;
+  position: fixed;
+  left: 7vw;
+  bottom: 12vh;
+  z-index: 2;
+}
+
+#entrar:hover { border-color: var(--acento); color: var(--acento); }
+#entrar:disabled { opacity: .3; cursor: wait; }
+body.dentro #entrar { display: none; }

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-Starter. (Musica-Fondo)</title>
+  </head>
+  <body>
+    <header id="copy">
+      <p class="kicker">Ejercicio 01 · S12</p>
+      <h1 class="titulo">Música de fondo.</h1>
+      <p class="bajada">Cargar un archivo, desbloquearlo con un gesto y dejarlo sonar en loop.</p>
+    </header>
+
+    <main id="data-extracts">
+      <section class="valores">
+        <ul>
+          <li>
+            <h6 class="label">AudioContext:</h6>
+            <p class="data" id="audio-estado">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Archivo:</h6>
+            <p class="data" id="audio-carga">cargando…</p>
+          </li>
+
+          <li>
+            <h6 class="label">Volumen:</h6>
+            <p class="data" id="audio-volumen">?</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Sin este clic no suena nada: es el gesto que desbloquea el audio -->
+    <button id="entrar" disabled>Entrar</button>
+    <button id="mute">Silenciar</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

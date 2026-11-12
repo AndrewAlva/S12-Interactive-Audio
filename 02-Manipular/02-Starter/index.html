@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-Starter. (Manipular)</title>
+  </head>
+  <body>
+    <header id="copy">
+      <p class="kicker">Ejercicio 02 · S12</p>
+      <h1 class="titulo">Manipular.</h1>
+      <p class="bajada">El mouse en X abre o cierra un filtro. En Y sube o baja el volumen.</p>
+    </header>
+
+    <!-- Extensión: el círculo late con lo que suena -->
+    <div id="circulo"></div>
+
+    <main id="data-extracts">
+      <section class="valores">
+        <ul>
+          <li>
+            <h6 class="label">Mouse X:</h6>
+            <p class="data" id="mouse-x">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Filtro:</h6>
+            <p class="data" id="audio-frecuencia">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Mouse Y:</h6>
+            <p class="data" id="mouse-y">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Volumen:</h6>
+            <p class="data" id="audio-volumen">?</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <button id="entrar" disabled>Entrar</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-Demo. (SFX)</title>
+  </head>
+  <body>
+    <header id="copy">
+      <p class="kicker">Ejercicio 03 · S12</p>
+      <h1 class="titulo">SFX.</h1>
+      <p class="bajada">Un sonido al pasar sobre cada carta y otro al voltearla.</p>
+    </header>
+
+    <main id="mesa">
+      <button class="carta"><span class="frente">0</span><span class="reverso">El Loco</span></button>
+      <button class="carta"><span class="frente">I</span><span class="reverso">El Mago</span></button>
+      <button class="carta"><span class="frente">II</span><span class="reverso">La Sacerdotisa</span></button>
+      <button class="carta"><span class="frente">III</span><span class="reverso">La Emperatriz</span></button>
+      <button class="carta"><span class="frente">IV</span><span class="reverso">El Emperador</span></button>
+    </main>
+
+    <aside id="data-extracts">
+      <section class="valores">
+        <ul>
+          <li>
+            <h6 class="label">Último sonido:</h6>
+            <p class="data" id="sfx-ultimo">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Detune:</h6>
+            <p class="data" id="sfx-detune">?</p>
+          </li>
+
+          <li>
+            <h6 class="label">Fuentes creadas:</h6>
+            <p class="data" id="sfx-conteo">0</p>
+          </li>
+        </ul>
+      </section>
+    </aside>
+
+    <button id="entrar" disabled>Entrar</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

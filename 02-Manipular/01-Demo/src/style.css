@@ -1,0 +1,131 @@
+:root {
+  --fondo-1: #2e1a14;
+  --fondo-2: #06080d;
+  --texto: #f4efe6;
+  --acento: #ff6a3d;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  color: var(--texto);
+  font-family: var(--sans);
+  background: radial-gradient(circle at 50% 50%, var(--fondo-1), var(--fondo-2) 70%);
+}
+
+/* Texto en HTML ---------------------------------------------------------- */
+#copy {
+  position: fixed;
+  left: 7vw;
+  top: 10vh;
+  max-width: 30ch;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.04em;
+}
+
+.bajada {
+  margin: 1.4rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: .75;
+}
+
+
+/* Data containers en HTML ---------------------------------------------------------- */
+#data-extracts {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 50%;
+  display: flex;
+  pointer-events: none;
+}
+
+.valores {
+  width: 100%;
+  padding-top: 60px;
+  border-left: 1px solid white;
+}
+
+.valores ul li {
+  position: relative;
+  margin-bottom: 54px;
+}
+
+.valores .label {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.valores .data {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+}
+
+
+/* Botones ---------------------------------------------------------- */
+button {
+  font: 500 14px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--texto);
+  background: none;
+  border: 1px solid var(--texto);
+  border-radius: 999px;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--acento); color: var(--acento); }
+button:disabled { opacity: .3; cursor: wait; }
+
+#entrar {
+  position: fixed;
+  left: 7vw;
+  bottom: 12vh;
+  font-size: 18px;
+  padding: 1.3rem 2.4rem;
+}
+
+body.dentro #entrar { display: none; }
+
+
+/* Círculo que late (extensión) ---------------------------------------------------------- */
+#circulo {
+  position: fixed;
+  left: 25%;
+  top: 60%;
+  width: 22vmin;
+  height: 22vmin;
+  border-radius: 50%;
+  background: var(--acento);
+  transform: translate(-50%, -50%) scale(.4);
+  pointer-events: none;
+}
