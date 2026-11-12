@@ -2,7 +2,7 @@ import './style.css';
 console.log("03-SFX. 01-Demo.");
 
 // Obtener referencias a los elementos del DOM ---------------------------------------------------------------
-const botonEntrar = document.getElementById("entrar");
+const botonActivar = document.getElementById("activar");
 const cartas = document.querySelectorAll(".carta");
 const ultimoContainer = document.getElementById("sfx-ultimo");
 const detuneContainer = document.getElementById("sfx-detune");
@@ -58,10 +58,10 @@ async function cargarAudio(url) {
 Promise.all([cargarAudio(URL_HOVER), cargarAudio(URL_VOLTEAR)]).then(([hover, voltear]) => {
   sonidos.hover = hover;
   sonidos.voltear = voltear;
-  botonEntrar.disabled = false;
+  botonActivar.disabled = false;
 });
 
-botonEntrar.addEventListener("click", async () => {
+botonActivar.addEventListener("click", async () => {
   await audioContext.resume();
   document.body.classList.add("dentro");
 });

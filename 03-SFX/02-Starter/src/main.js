@@ -2,7 +2,7 @@ import './style.css';
 console.log("03-SFX. 02-Starter.");
 
 // Obtener referencias a los elementos del DOM ---------------------------------------------------------------
-const botonEntrar = document.getElementById("entrar");
+const botonActivar = document.getElementById("activar");
 const cartas = document.querySelectorAll(".carta");
 const ultimoContainer = document.getElementById("sfx-ultimo");
 const detuneContainer = document.getElementById("sfx-detune");
@@ -58,7 +58,7 @@ async function cargarAudio(url) {
 //     Cuando lleguen, guárdalos en sonidos.hover y sonidos.voltear, y habilita "Entrar".
 
 
-botonEntrar.addEventListener("click", async () => {
+botonActivar.addEventListener("click", async () => {
   await audioContext.resume();
   document.body.classList.add("dentro");
 });

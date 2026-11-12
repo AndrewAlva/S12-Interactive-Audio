@@ -96,7 +96,7 @@ body {
   transition: opacity .4s;
 }
 
-/* antes de "Entrar" las cartas no responden: todavía no hay audio */
+/* antes de "Activar" las cartas no responden: todavía no hay audio */
 body:not(.dentro) #mesa { opacity: .3; pointer-events: none; }
 
 .carta {
@@ -142,7 +142,7 @@ body:not(.dentro) #mesa { opacity: .3; pointer-events: none; }
 
 
 /* Botones ---------------------------------------------------------- */
-#entrar {
+#activar {
   font: 500 18px/1 var(--mono);
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -158,6 +158,6 @@ body:not(.dentro) #mesa { opacity: .3; pointer-events: none; }
   z-index: 2;
 }
 
-#entrar:hover { border-color: var(--acento); color: var(--acento); }
-#entrar:disabled { opacity: .3; cursor: wait; }
-body.dentro #entrar { display: none; }
+#activar:hover { border-color: var(--acento); color: var(--acento); }
+#activar:disabled { opacity: .3; cursor: wait; }
+body.dentro #activar { display: none; }
