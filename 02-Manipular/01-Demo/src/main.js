@@ -2,7 +2,7 @@ import './style.css';
 console.log("02-Manipular. 01-Demo.");
 
 // Obtener referencias a los elementos del DOM ---------------------------------------------------------------
-const botonEntrar = document.getElementById("entrar");
+const botonActivar = document.getElementById("activar");
 const mouseXContainer = document.getElementById("mouse-x");
 const frecuenciaContainer = document.getElementById("audio-frecuencia");
 const mouseYContainer = document.getElementById("mouse-y");
@@ -87,10 +87,10 @@ async function cargarAudio(url) {
 
 cargarAudio(URL_MUSICA).then((buffer) => {
   musicaBuffer = buffer;
-  botonEntrar.disabled = false;
+  botonActivar.disabled = false;
 });
 
-botonEntrar.addEventListener("click", async () => {
+botonActivar.addEventListener("click", async () => {
   await audioContext.resume();
 
   const fuente = audioContext.createBufferSource();
