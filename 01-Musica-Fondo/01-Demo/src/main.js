@@ -2,7 +2,7 @@ import './style.css';
 console.log("01-Musica-Fondo. 01-Demo.");
 
 // Obtener referencias a los elementos del DOM ---------------------------------------------------------------
-const botonEntrar = document.getElementById("entrar");
+const botonActivar = document.getElementById("activar");
 const botonMute = document.getElementById("mute");
 const estadoContainer = document.getElementById("audio-estado");
 const cargaContainer = document.getElementById("audio-carga");
@@ -49,7 +49,7 @@ async function cargarAudio(url) {
 cargarAudio(URL_MUSICA).then((buffer) => {
   musicaBuffer = buffer;
   cargaContainer.innerText = `listo • ${buffer.duration.toFixed(1)} s`;
-  botonEntrar.disabled = false;
+  botonActivar.disabled = false;
 });
 // -------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ cargarAudio(URL_MUSICA).then((buffer) => {
 
 
 // Entrar: el gesto que desbloquea el audio ---------------------------------------------------------------
-botonEntrar.addEventListener("click", async () => {
+botonActivar.addEventListener("click", async () => {
   // 4 · resume(): ahora sí, el usuario hizo clic
   await audioContext.resume();
 
